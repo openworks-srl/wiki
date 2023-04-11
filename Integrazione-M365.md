@@ -1,5 +1,9 @@
 # Integrazione OpenLearn con Microsoft 365
 
+> **Attenzione**
+> Attendere la call con i tecnici Openworks primi di iniziare la procedura!
+
+
 ## Autenticazione ed aggiornamento anagrafica
 
 > **Note**
