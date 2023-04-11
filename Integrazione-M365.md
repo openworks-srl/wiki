@@ -8,7 +8,7 @@
 ### 1. Creazione dell'applicazione
 1) Entrare sull'interfaccia di amministrazione di Azure AD ([link](https://portal.azure.com/#view/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/~/RegisteredApps))
 1) Controllare che il tenant sia corretto
-1) Premere su *"Registrazioni App"*
+1) Premere su *"Registrazioni App"* dal menù a sinistra
 1) Premere su *"Nuova registrazione"*
 1) Inserire un nome per la nuova applicazione *(Es. `Openlearn-connector`)*
 1) Selezionare la voce *"Account solo in questa directory dell'organizzazione (Solo Default Directory - Tenant singolo)"*
