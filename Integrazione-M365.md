@@ -13,7 +13,7 @@
 1) Inserire un nome per la nuova applicazione *(Es. `Openlearn-connector`)*
 1) Selezionare la voce *"Account solo in questa directory dell'organizzazione (Solo Default Directory - Tenant singolo)"*
 1) Sotto *"URI di reindirizzamento"*, selezionare *"WEB"*
-1) Inserire `https://${url_piattaforma}/auth/oidc`
+1) Inserire `https://{{url_piattaforma}}/auth/oidc`
 1) Premere su *"Registra"*
 1) Copiare il valore di *"ID applicazione (client)"* ed inviarlo a  Openworks.
 
@@ -39,7 +39,7 @@
 
 1) Premere su *"Certificati e segreti"* dal menù a sinistra
 1) Premere su *"Nuovo segreto client"*
-1) Immettere una descrizione (Es. `Chiave generata il ${data_odierna}`)
+1) Immettere una descrizione (Es. `Chiave generata il {{data_odierna}}`)
 1) Selezionare *"730 giorni (24 mesi)"* come scadenza
 1) Premere su *"Aggiungi"*
 1) Copiare immediatamente il *Valore* della chiave appena generata ed inviarla ad Openworks (**Attenzione, la chiave non sarà mai più visibile una volta lasciata la pagina!**)
@@ -50,15 +50,15 @@
 > Riceverai da Openworks delle credenziali temporanee per l'accesso a Openlearn da utilizzare durante la procedura
 
 
-1) Recarsi al seguente indirizzo: [Admin consent](https://${url_piattaforma}/local/o365/acp.php?mode=adminconsent)
+1) Recarsi al seguente indirizzo: [Admin consent](https://{{url_piattaforma}}/local/o365/acp.php?mode=adminconsent)
 1) Assicurarsi che il browser che si sta utilizzando sia attualmente autenticato con l'account Microsoft amministratore usato nei passsaggi precedenti
-1) Accedere alla piattaforma *"${url_piattaforma}"* utilizzando le credenziali fornite da Openworks
+1) Accedere alla piattaforma *"{{url_piattaforma}}"* utilizzando le credenziali fornite da Openworks
 1) Apparirà una finestra di autorizzazione di Microsoft, controllare i permessi e premere su *"xxx"*
-1) Recarsi all'indirizzo [${url_piattaforma}](https://${url_piattaforma})
+1) Recarsi all'indirizzo [{{url_piattaforma}}](https://{{url_piattaforma}})
 1) Premere sull'icona di profilo in alto a destra, e selezionare *"Esci"* per disconnettere l'account temporaneo
 
 ### 4. Test dell'integrazione
 
-1) Utilizzando un browser in modalità "in incognito/anonimo", recarsi all'indirizzo [${url_piattaforma}](https://${url_piattaforma/auth/oidc})
+1) Utilizzando un browser in modalità "in incognito/anonimo", recarsi all'indirizzo [{{url_piattaforma}}](https://{{url_piattaforma}}/auth/oidc})
 1) Entrare con le proprie credenziali Microsoft, se l'integrazione funziona si verrà reindirizzati alla piattaforma Openlearn.
 
