@@ -34,8 +34,10 @@
                 var template = Mustache.render(markdown, data);
                 document.getElementById('content').innerHTML = marked.parse(template);
                 $('a').each((i,e) => {
-                    if (!$(e).attr('href').startsWith('/wiki?doc=') && !$(e).hasClass('int-link')) 
-                    $(e).attr('target', '_blank');
+                    if ($(e).hasClass('int-link'))
+                        $(e).attr('href', $(e).attr('href') + '&' + data.url_params);
+                    else if (!$(e).attr('href').startsWith('/wiki?doc=')) 
+                        $(e).attr('target', '_blank');
                 })
             })
             .fail(() => {
