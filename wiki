@@ -22,14 +22,15 @@
             const _404 = '<div class="text-center">'+marked.parse('# 404 File not found\n\nIl documento che stai crecando non esiste, controlla che il nome sia corretto o contatta l\'assistenza. ![404](https://raw.githubusercontent.com/openworks-srl/wiki/main/404.png)') + '</div>';
             var data = queryStringToObject(window.location.search);
             const filename = data.doc;
-            data.urlParams = objectToQueryString(data);
+            data.url_params = objectToQueryString(data);
             data.data_odierna = new Date().getDate() + '-' + new Date().getMonth() + '-' + new Date().getFullYear();
             data.ow = await clean(data.ow);
             
 
     
-            $.ajax('https://raw.githubusercontent.com/openworks-srl/wiki/main/' + filename + '.md?'+Date.now())
+            $.ajax('https://raw.githubusercontent.com/openworks-srl/wiki/main/' + filename + '.md?nocache='+Date.now())
             .done(function (markdown) {
+                markdown = markdown.replace(/\{\{\#ow}\}/g, '{{#ow}}<span class="ow">').replace(/\{\{\/ow}\}/g, '</span>{{/ow}}');
                 var template = Mustache.render(markdown, data);
                 document.getElementById('content').innerHTML = marked.parse(template);
                 $('a').each((i,e) => {
@@ -98,6 +99,14 @@
             height: 650px;
             width: auto;
         }
+
+        .ow  {
+        display: block;
+        margin-top: 5px;
+        margin-bottom: 5px;
+        background-color: lavender;
+        border: 1px dashed blue;
+    }
     </style>
 </body>
 
